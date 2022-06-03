@@ -1,56 +1,11 @@
-# First + Third Shopify Developer Challenge
+If I was doing this while working for First+Third I would have asked questions before getting started. While I was doing the project I was confused about what functionality of the app was supposed to work similarly to Shopify. 
 
-Hello there potential Shopify Expert!
+I was trying to get the Add to Cart button to work with vanilla AJAX but it didn't work. I wound up using jQuery anyway because I wanted to use slick slide. I should have decided before I started the project if I was going to use jQuery or not.
 
-We would like to assess your Shopify Accumen so we have developed this pretty awesome test that will stretch your imagination, but not take you too much time. The challenge is to create a simple Product Detail Page (PDP) using Shopify Liquid Syntax, and the AJAX cart api all contained within this simple repository.
+I have used AJAX with Shopify before and I know that I should have posted a quantity and the product id but it wasn't working.
 
-To make the challenge as accessible as possible, we have created a standalone node app that will serve up the finished product and handle all of the routes that you will need to complete the project.
+In this project I would have changed the fonts and spent more time on the design overall obviously. I'm not a designer by any means but I often get asked to match things to existing designs. So if this was a real project I would have picked a design that I liked and done something similar.
 
-*Sound FUN?!?* - then read on.
+I wouldn't have used any cdns and would have added the files into the project.
 
-## Setup
-
-As mentioned, the challenge is self contained within this repository so there will be no need to create a dev store or anything like that. Instead we created a little module that will show rendered liquid code, serve static assets, and handle the cart POST request for you. And while it helps if you have an understanding of node-js, it should be simple enough to run without any help.
-
-Simply follow these instructions to get the project running:
-
-1. Fork this repository into your own github profile and make any changes in that repository space.
-2. Clone the repository onto your development environment.
-3. From the new folder, install the required modules using `npm install` (Or your favorite package manager).
-4. Start the development server using `npm run dev`.
-
-You should now have a development server running on port `3000` that will display the default information.
-
-## Challenge Instructions
-
-*Congratulations! You have made it this far!* Now for the actual fun part.
-
-The simple app is a single route web server that serves liquid templates out of the `templates` folder. Inside that folder there is a base `template.liquid` folder as well as the main file, `product.liquid` which serves as the main template file. It would be best to keep the template files simple, but you should be able to add additional templates or template parts as required.
-
-The data for the product page comes from the `product.json` file in the root of the main directory. This is a product object taken from an actual Shopify store and is passed to the rendering engine as the variable `product` which you should see in the `product.liquid` file.
-
-Any static files can be placed inside the `public` folder and they will be served from there. The images referenced in the product object are already inside that folder and can be accessed at `/images/{filename}.png`.
-
-So here is what we are looking for.
-
-* Using the liquid templates and whatever static assets you need, create a single simple product detail page that renders the product details.
-* Make sure to add some style. You can do this with a simple vanilla CSS file, a `<style>` tagin the head of the page, or if you are comfortable - with your favorite css compiler.
-* The PDP should have an add to cart button that is clearly visible.
-* Using some front end javascript, attach a handler to the add to cart button that posts the appropriate information the `cart/add.js` route. That route will simply return the data `{ success: 1 }` so display a success message to let the user know their product was added correctly!
-* Make sure the add to cart request sends the appropriate data to the endpoint to add an item to the cart (Using the shopify API paradigm).
-
-And *Voila!* You are almost done!
-
-## Troubleshooting tips
-
-Since this is not _actually_ a shopify site, we can't expect it to behave exactly like a shopify site in terms of error handling. If an error occurs (as in a mis-typed variable, or bad liquid syntax) the page will return a 500 error. All errors are logged in the console so look out there for what might be going wrong. 
-
-To stop the development server, simlpy do a `ctrl` + `c` and the node process will stop.
-
-# LASTLY: THE MOST IMPORTANT PART
-
-When you are done - remove _ALL_ of the text from this README, and replace it with a description of what you did. Tell us why you made the choices you did, what you would have liked to do better, what was your favorite part, and most importantly, what would you change if this we're _ACTUALLY_ a shopify theme.
-
-Once you have that done - Commit a new branch - and send us a link to your repo so that we can review what you did.
-
-Don't forget - *HAVE FUN!*
+The most fun part was actually the part that was the hardest for me. Generally trying to determine what was going to be similar to Shopify in the app and what wasn't was both frustrating and interesting at the same time like a lot of dev work. Dev work is often the most rewarding when you're trying to figure things out like a puzzle. I enjoyed opening up the node app and looking into hapi. I've never used liquid outside of Shopify before although it's really similar to ruby in my opinion which I do have experience with. But the project was also a bit frustrating because overall it seemed pretty simple and I felt like I was missing something obvious which probably could have been solved quickly by asking some questions before starting the project. 

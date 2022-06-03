@@ -1,10 +1,87 @@
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+<style>
+	.product-gallery {
+	    float: left;
+	    margin: 15px 60px 0px;
+	    max-width: 528px;
+	}
+
+	.product-gallery img {
+	    max-width: 100%;
+	}
+
+	.page-container {
+	    padding: 50px;
+	}
+
+	@media screen and (max-width: 1020px) {
+		.product-gallery {
+			float: none;
+			margin: 15px 15px 0px;
+			max-height: 350px;
+		}
+	}
+
+	.slick-next:before, .slick-prev:before {
+		color: #000;
+	}
+</style>
+
 {% layout "template.liquid" %}
 
 {% block content %}
-    <h1>{{ product.title | capitalize }}</h1>
-    <img src="/images/glamour_view.png">
 
-    {{ product.description }}
-    <h3>{{ product.price | money }}</h3>
-    <button>Add to cart</button>
+<div class="page-container">
+    <div class="product-gallery single-item">
+    	<div class="product-image">
+    		<img src="/images/glamour_view.png">
+    	</div>
+    	<div class="product-image">
+    		<img src="/images/bottom_view.png">
+    	</div>
+    	<div class="product-image">
+    		<img src="/images/shoes.png">
+    	</div>
+    	<div class="product-image">
+    		<img src="/images/side_view.png">
+    	</div>
+    	<div class="product-image">
+    		<img src="/images/top_view.png">
+    	</div>
+    </div>
+
+    <div class="product-info">
+    	<h1>{{ product.title | capitalize }}</h1>
+	    {{ product.description }}
+	    <h3>${{ product.price | money }}</h3>
+
+		<form action="/cart/add.js" method="post">
+	    	<input type="submit" name="addToCart" value="Add To Cart" />
+		</form>
+	</div>
+</div>
+
+<script>
+	const btn = document.querySelector('input');
+
+	btn.addEventListener('click', () => {
+	  alert("You've Added a Product!");
+	  console.log("payload");
+	});
+</script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+{% comment %}Initialize slick slider{% endcomment %} 
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.single-item').slick();
+});
+</script>
+
 {% endblock %}
+
